@@ -5,7 +5,6 @@ services:
       context: ../knock_knock_frontend
       dockerfile: docker/development/Dockerfile
     container_name: knock-knock-frontend
-    network-mode: bridge
     command: npm run start
     ports:
       - 3000:3000
@@ -23,7 +22,6 @@ services:
       context: ../knock_knock
       dockerfile: docker/development/Dockerfile
     container_name: knock-knock-api
-    network-mode: bridge
     ports:
       - 8000:8000
     env_file:
