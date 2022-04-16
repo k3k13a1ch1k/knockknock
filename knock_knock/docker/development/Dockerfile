@@ -4,8 +4,8 @@ ENV PYTHONBUFFERED=1
 
 ARG CUID=1000
 
-RUN apt-get update && apt-get install -y gcc libpq-dev && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean && pip install poetry==1.1.13
+RUN sudo apt-get update && sudo apt-get install -y gcc libpq-dev && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean && sudo pip install poetry==1.1.13
 
 RUN groupadd --gid $CUID django && useradd --uid $CUID --gid django --shell /bin/bash --create-home django
 

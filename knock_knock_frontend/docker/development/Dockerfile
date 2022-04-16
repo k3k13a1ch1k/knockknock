@@ -2,7 +2,9 @@ FROM node:14-alpine
 
 ARG CUID=1000
 
-RUN deluser --remove-home node && addgroup -S nodeuser -g $CUID && adduser -u $CUID -S -G nodeuser
+RUN deluser --remove-home node
+RUN addgroup -g $CUID -S nodeuser
+RUN adduser -u $CUID -S nodeuser -G nodeuser
 
 WORKDIR /home/nodeuser/app
 
