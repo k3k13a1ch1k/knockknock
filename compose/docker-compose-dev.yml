@@ -37,7 +37,6 @@ services:
 
   db:
     image: postgres:12-alpine
-    network_mode: brigde
     env_file:
       - ../knock_knock/env/development/.db.env
     ports:
@@ -55,7 +54,8 @@ networks:
       config:
         - subnet: 172.28.0.0/16
   knock-knock-db-net:
-    driver: brigde
+    ipam:
+      driver: brigde
 
 volumes:
   knock-knock-data-storage:
