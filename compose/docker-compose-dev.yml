@@ -5,6 +5,7 @@ services:
       context: ../knock_knock_frontend
       dockerfile: docker/development/Dockerfile
     container_name: knock-knock-frontend
+    network-mode: bridge
     command: npm run start
     ports:
       - 3000:3000
@@ -22,6 +23,7 @@ services:
       context: ../knock_knock
       dockerfile: docker/development/Dockerfile
     container_name: knock-knock-api
+    network-mode: bridge
     ports:
       - 8000:8000
     env_file:
@@ -37,6 +39,7 @@ services:
 
   db:
     image: postgres:12-alpine
+    network_mode: brigde
     env_file:
       - ../knock_knock/env/development/.db.env
     ports:
@@ -54,7 +57,7 @@ networks:
       config:
         - subnet: 172.28.0.0/16
   knock-knock-db-net:
-    network_mode: brigde
+    driver: brigde
 
 volumes:
   knock-knock-data-storage:
