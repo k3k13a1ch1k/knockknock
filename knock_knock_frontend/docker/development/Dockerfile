@@ -8,6 +8,8 @@ RUN adduser -u $CUID -S nodeuser -G nodeuser
 
 WORKDIR /home/nodeuser/app
 
+RUN mkdir /home/nodeuser/app/node_modules/.cache
+
 COPY ./package*.json ./
 
 RUN yarn install
