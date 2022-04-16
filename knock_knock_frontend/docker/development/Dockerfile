@@ -12,9 +12,8 @@ RUN mkdir -p /home/nodeuser/app/node_modules/.cache
 
 COPY ./package*.json ./
 
-USER nodeuser
-
 RUN yarn install -g --unsafe-perm=true --allow-root  
 
 COPY . .
 
+USER nodeuser
