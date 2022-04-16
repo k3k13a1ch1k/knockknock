@@ -355,7 +355,7 @@ logs
 **/*.backup.*
 **/*.back.*
 
-node_modules
+
 bower_components
 
 *.sublime*
