@@ -11,6 +11,7 @@ WORKDIR /home/nodeuser/app
 RUN mkdir -p /node_modules/.cache
 
 COPY ./package*.json ./
+COPY ./yarn.lock ./
 
 RUN yarn install
 
