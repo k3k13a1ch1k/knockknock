@@ -54,7 +54,7 @@ networks:
       config:
         - subnet: 172.28.0.0/16
   knock-knock-db-net:
-    driver: brigde
+    network_mode: brigde
 
 volumes:
   knock-knock-data-storage:
