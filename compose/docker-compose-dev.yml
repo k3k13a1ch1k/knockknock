@@ -5,7 +5,7 @@ services:
       context: ../knock_knock_frontend
       dockerfile: docker/development/Dockerfile
     container_name: knock-knock-frontend
-    command: npm run start
+    command: npm run build
     ports:
       - 3000:3000
     networks:
