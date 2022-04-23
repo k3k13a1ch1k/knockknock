@@ -6,6 +6,8 @@ RUN deluser --remove-home node
 RUN addgroup -g $CUID -S nodeuser
 RUN adduser -u $CUID -S nodeuser -G nodeuser
 
+RUN npm install -g npm@8.7.0
+
 WORKDIR /home/nodeuser/app
 
 RUN mkdir -p /node_modules/.cache
@@ -18,3 +20,5 @@ RUN npm install
 COPY . .
 
 USER nodeuser
+
+RUN npm run build
