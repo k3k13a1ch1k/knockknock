@@ -20,5 +20,3 @@ RUN npm install
 COPY . .
 
 USER nodeuser
-
-RUN npm run build
