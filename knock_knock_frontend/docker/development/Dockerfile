@@ -11,6 +11,7 @@ RUN npm install -g npm@8.7.0
 WORKDIR /home/nodeuser/app
 
 RUN mkdir -p /node_modules/.cache
+RUN mkdir -p /build
 
 COPY ./package*.json ./
 COPY ./yarn.lock ./
